@@ -1,0 +1,66 @@
+<%
+	// Disable Caching
+	response.setHeader("Cache-Control", "no-cache, no-store");
+	response.setHeader("Pragma","no-cache");
+	response.setDateHeader ("Expires", 0);
+	
+	session.setAttribute("username", null);
+%>
+<html>
+	<head>
+		<title>Sign Up</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="signup.css">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+	
+		<script>
+			// Back button pressed
+			if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
+				session.setAttribute("username", null);
+				session.setAttribute("login_error_message", null);
+				session.setAttribute("myStocks", null);
+			}
+		</script>
+	
+	</head>
+	<body>
+		<header style="height:70px; background:#787878;">
+  			<nav id="banner" class="navbar navbar-dark bg-secondary navbar-static-top justify-content-center">
+		      	<div id="banner-content" class="navbar-brand" style="color:white;font-size:45px;font-family: 'Raleway', sans-serif;">
+		      		<a href="index.jsp" style="text-decoration: none; color:white; font-size:4vw;" >
+				    USC CS 310 Stock Portfolio Management 
+					</a>
+		      	</div>
+	   		</nav>
+	 	 </header>
+		
+		<div class="container">
+
+		
+		<h1 class="text-center" style="margin-top: 40px;">Create an account now!</h1>
+		<form class = "form-signin" action="/signup" method="post">
+			
+			
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input id = "username" name = "username" class = "form-control" type="text" placeholder="username" required>
+			</div>
+
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input id = "password" name = "password" class = "form-control" type="password" placeholder="password" required>
+			</div>
+
+			<div class="form-group">
+				<label for="confirmPassword">Confirm Password</label>
+				<input id = "password2" name = "password2" class = "form-control" type="password" placeholder="password" required>
+			</div>
+
+			<div id="error" name ="error"></div>
+			
+			<button type="submit" class="btn btn-lg btn-primary btn-block">Create User</button>
+			<button onclick="location.href='/login.jsp'" type="button" class="btn btn-lg btn-secondary btn-block">Cancel</button>
+		</form>
+		</div>
+	</body>
+</html>
