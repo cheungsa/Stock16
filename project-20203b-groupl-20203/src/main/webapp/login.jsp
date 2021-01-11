@@ -31,7 +31,8 @@
 	  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 	  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <link rel="stylesheet" href="styles/login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">  
+  </head>
   
   	<script>
 		// Back button pressed
